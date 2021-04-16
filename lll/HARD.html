@@ -36,7 +36,9 @@
         picture(zombie.x, zombie.y, "images.jpg")
 
 
-
+        if (keyboard.space)
+          zombie.speed += 1.5
+          
         if (zombie.x < mouse.x)
           zombie.x += zombie.speed;
         else

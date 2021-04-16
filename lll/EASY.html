@@ -7,14 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!--Till at börja med så skapar jag en zombies lista för att kunna ha mer än en zombie sedan så skapar jag ett värde för i som då kommer representera zombiesen.
+    zombies.push gör att de spawnar på ett random ställe och att de får en random speed. Sedan i functionen så gör jag en clearscreen för att från menyn ska refreshas till zombie spelet
+  så att inte menyn är kvar i bakgrunden. jag som här dår har while i < 2 vilket är att det bara finns 2 zombies (easy). Koden är samma i alla, hard osv bara att det är mer zombies.
+Att göra mitt vapen med spacebar gick tyvärr inte för kunde inte hitta något sätt att få det att fungera vilket e sorgligt för blev tvungen att skriva om all kod. Sedan är det
+ganska simpel kod, en bild, flera if satser för att kunna få zombien att jaga musen och då när man bli fångad, stopupdate. Gjorde nu att ifall man klickar space så kommer dom att 
+bli snabbare så man kan få en mer utav utmaning.-->
 <script src="https://koda.nu/simple.js">
     var zombies = [];
   
     var i = 0;
     while (i < 100)
     {
-      zombies.push({x: random(totalWidth),
+      zombies.push({x: random(totalWidth), 
                   y: random(totalHeight),
                   speed: random(4,7)});
       i += 1;
@@ -35,7 +40,8 @@
       
         picture(zombie.x, zombie.y, "images.jpg")
 
-
+        if (keyboard.space)
+          zombie.speed += 1.5
 
         if (zombie.x < mouse.x)
           zombie.x += zombie.speed;
@@ -50,7 +56,7 @@
         {
           stopUpdate(); 
           break;
-          alert("You got caught!!!");
+          alert("You got caught!!!")
         }
           i++;
           

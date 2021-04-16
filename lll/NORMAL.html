@@ -35,7 +35,8 @@
       
         picture(zombie.x, zombie.y, "images.jpg")
 
-
+        if (keyboard.space)
+          zombie.speed += 1.5
 
         if (zombie.x < mouse.x)
           zombie.x += zombie.speed;
@@ -50,7 +51,7 @@
         {
           stopUpdate(); 
           break;
-          alert("You got caught!!S!")
+          alert("You got caught!!!")
         }
           i++;
       }
